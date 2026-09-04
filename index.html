@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Python Teaching Platform</title>
+    <title>Python Practice Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -31,9 +31,6 @@
             border-bottom: 1px solid #E7E1D7;
             padding: 1.2rem 2rem;
             z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         nav h1 {
@@ -48,41 +45,15 @@
             font-style: italic;
         }
 
-        .nav-status {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .status-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 400;
-        }
-
-        .chip-success {
-            background: #E8F5E9;
-            color: #2E7D32;
-        }
-
-        .chip-warning {
-            background: #FFF9E6;
-            color: #F57C00;
-        }
-
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .eyebrow {
@@ -113,97 +84,115 @@
         .subtitle {
             color: #5C635D;
             font-size: 1.125rem;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(31, 36, 33, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.show {
-            display: flex;
-        }
-
-        .modal-content {
+        .controls {
             background: #FFFFFF;
+            border: 1px solid #E7E1D7;
             border-radius: 12px;
-            padding: 2.5rem;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 8px 32px rgba(31, 36, 33, 0.2);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(31, 36, 33, 0.04);
         }
 
-        .modal-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.75rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .modal-desc {
-            color: #5C635D;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group label {
+        .controls label {
             display: block;
             font-weight: 400;
             margin-bottom: 0.5rem;
             color: #1F2421;
         }
 
-        input[type="text"],
-        input[type="password"],
         select {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 0.75rem 1rem;
             border: 1px solid #E7E1D7;
             border-radius: 8px;
             background: #FBF9F5;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             color: #1F2421;
+            cursor: pointer;
             transition: border-color 0.2s;
         }
 
-        input:focus,
+        select:hover {
+            border-color: #C4612F;
+        }
+
         select:focus {
             outline: none;
             border-color: #C4612F;
         }
 
-        .api-info {
-            background: #F2E3D6;
-            padding: 1rem;
-            border-radius: 8px;
+        .question-card {
+            background: #FFFFFF;
+            border: 1px solid #E7E1D7;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(31, 36, 33, 0.04);
+        }
+
+        .question-header {
             margin-bottom: 1.5rem;
+        }
+
+        .question-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-desc {
+            color: #5C635D;
+            line-height: 1.7;
+        }
+
+        .example {
+            background: #FBF9F5;
+            border: 1px solid #E7E1D7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Monaco', 'Courier New', monospace;
             font-size: 0.9rem;
         }
 
-        .api-info a {
-            color: #C4612F;
-            text-decoration: none;
+        .example-label {
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
+            color: #C4612F;
+            margin-bottom: 0.5rem;
         }
 
-        .api-info a:hover {
-            text-decoration: underline;
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            border: 1px solid #E7E1D7;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            background: #FBF9F5;
+            color: #1F2421;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #C4612F;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         button {
@@ -228,13 +217,6 @@
             box-shadow: 0 4px 12px rgba(196, 97, 47, 0.3);
         }
 
-        .btn-primary:disabled {
-            background: #E7E1D7;
-            color: #5C635D;
-            cursor: not-allowed;
-            transform: none;
-        }
-
         .btn-secondary {
             background: #FBF9F5;
             color: #1F2421;
@@ -244,163 +226,6 @@
         .btn-secondary:hover {
             background: #F7F4EF;
             transform: translateY(-2px);
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background: #FFFFFF;
-            border: 1px solid #E7E1D7;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(31, 36, 33, 0.04);
-        }
-
-        .card-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .card-desc {
-            color: #5C635D;
-            margin-bottom: 1.5rem;
-        }
-
-        textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 1rem;
-            border: 1px solid #E7E1D7;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            background: #FBF9F5;
-            color: #1F2421;
-            resize: vertical;
-            transition: border-color 0.2s;
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: #C4612F;
-        }
-
-        .code-textarea {
-            font-family: 'Monaco', 'Courier New', monospace;
-            min-height: 250px;
-        }
-
-        .file-upload {
-            border: 2px dashed #E7E1D7;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            background: #FBF9F5;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-bottom: 1rem;
-        }
-
-        .file-upload:hover {
-            border-color: #C4612F;
-            background: #FFFFFF;
-        }
-
-        .file-upload.dragover {
-            border-color: #C4612F;
-            background: #F2E3D6;
-        }
-
-        .file-upload input[type="file"] {
-            display: none;
-        }
-
-        .file-name {
-            color: #C4612F;
-            font-weight: 400;
-            margin-top: 0.5rem;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .loading {
-            display: none;
-            color: #5C635D;
-            font-style: italic;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        .loading.show {
-            display: block;
-        }
-
-        .questions-container {
-            display: none;
-        }
-
-        .questions-container.show {
-            display: block;
-        }
-
-        .question-item {
-            background: #FFFFFF;
-            border: 1px solid #E7E1D7;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(31, 36, 33, 0.04);
-        }
-
-        .question-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-
-        .question-number {
-            background: #F2E3D6;
-            color: #C4612F;
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 400;
-        }
-
-        .question-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        .question-desc {
-            color: #5C635D;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-            white-space: pre-wrap;
-        }
-
-        .score-display {
-            background: #E8F5E9;
-            color: #2E7D32;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-weight: 400;
         }
 
         .output {
@@ -425,7 +250,7 @@
             border-color: #E57373;
         }
 
-        .output.info {
+        .output.partial {
             background: #FFF9E6;
             border-color: #FFD54F;
         }
@@ -443,30 +268,61 @@
         }
 
         .output-content {
-            font-size: 0.95rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
             line-height: 1.6;
             white-space: pre-wrap;
         }
 
-        .ai-feedback {
-            background: #F2E3D6;
-            border-left: 3px solid #C4612F;
-            padding: 1rem;
-            border-radius: 4px;
+        .status-chip {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .chip-success {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .chip-error {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+
+        .loading {
+            display: none;
+            color: #5C635D;
+            font-style: italic;
             margin-top: 1rem;
         }
 
-        .ai-feedback-title {
+        .loading.show {
+            display: block;
+        }
+
+        .hint {
+            background: #F2E3D6;
+            border-left: 3px solid #C4612F;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .hint.show {
+            display: block;
+        }
+
+        .hint-title {
             font-weight: 400;
             color: #C4612F;
             margin-bottom: 0.5rem;
         }
 
-        @media (max-width: 968px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-
+        @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
             }
@@ -487,229 +343,329 @@
 </head>
 <body>
     <nav>
-        <h1>AI Python <em>Teaching</em> Platform</h1>
-        <div class="nav-status">
-            <div class="status-chip chip-warning" id="api-status">
-                <span>⚠️</span>
-                <span>API Key Required</span>
-            </div>
-        </div>
+        <h1>Python Practice <em>Lab</em></h1>
     </nav>
-
-    <div class="modal show" id="api-modal">
-        <div class="modal-content">
-            <h3 class="modal-title">Welcome! Setup Required</h3>
-            <p class="modal-desc">To use AI features (question generation and code feedback), you need an API key from OpenAI or Anthropic.</p>
-            
-            <div class="api-info">
-                <strong>Get a free API key:</strong><br>
-                • OpenAI: <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a><br>
-                • Anthropic (Claude): <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a><br>
-                <br>
-                <small>Note: Most providers give free credits for new accounts.</small>
-            </div>
-
-            <div class="input-group">
-                <label for="api-provider">Choose Provider</label>
-                <select id="api-provider">
-                    <option value="openai">OpenAI (GPT-4/GPT-3.5)</option>
-                    <option value="anthropic">Anthropic (Claude)</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="api-key-input">API Key</label>
-                <input type="password" id="api-key-input" placeholder="sk-..." value="test-key-skip">
-                <small style="color: #5C635D; margin-top: 0.5rem; display: block;">You can skip this for now by clicking "Start Teaching" to test manual questions</small>
-            </div>
-
-            <button class="btn-primary" onclick="saveApiKey()" style="width: 100%;">Start Teaching</button>
-        </div>
-    </div>
 
     <div class="container">
         <div class="hero">
-            <div class="eyebrow">AI-Powered Learning</div>
-            <h2>Upload materials, generate <em>exercises</em>, get instant feedback</h2>
-            <p class="subtitle">An intelligent teaching assistant that creates personalized Python exercises and helps students debug their code</p>
+            <div class="eyebrow">Interactive Learning</div>
+            <h2>Write code, get <em>instant</em> feedback</h2>
+            <p class="subtitle">Practice Python fundamentals with guided exercises that check your work automatically</p>
         </div>
 
-        <div class="two-column">
-            <div class="card">
-                <h3 class="card-title">📚 Upload Learning Materials</h3>
-                <p class="card-desc">Upload your textbook or paste learning content. The AI will analyze it to generate relevant exercises.</p>
-                
-                <div class="file-upload" id="file-upload" onclick="document.getElementById('file-input').click()">
-                    <div>📄 Click to upload or drag & drop</div>
-                    <div style="color: #5C635D; font-size: 0.9rem; margin-top: 0.5rem;">Supports: TXT files</div>
-                    <div class="file-name" id="file-name"></div>
-                    <input type="file" id="file-input" accept=".txt" onchange="handleFileUpload(event)">
-                </div>
-
-                <div style="text-align: center; margin: 1rem 0; color: #5C635D;">— or —</div>
-
-                <textarea id="material-text" placeholder="Paste your learning materials here...
-
-Example:
-For Loops in Python
-A for loop is used to iterate over a sequence (like a list, tuple, or string) or other iterable objects.
-
-Syntax:
-for variable in sequence:
-    # code block
-
-Example:
-for i in range(5):
-    print(i)"></textarea>
-
-                <button class="btn-primary" onclick="generateQuestions()" style="width: 100%; margin-top: 1rem;">
-                    ✨ Generate Questions with AI
-                </button>
-                <div class="loading" id="generate-loading">Generating questions...</div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title">⚙️ Manual Question Entry</h3>
-                <p class="card-desc">Or create your own question manually if you prefer.</p>
-
-                <div class="input-group">
-                    <label>Question Title</label>
-                    <input type="text" id="manual-title" placeholder="e.g., Print Numbers 1 to 10">
-                </div>
-
-                <div class="input-group">
-                    <label>Question Description</label>
-                    <textarea id="manual-desc" placeholder="Write a program that prints numbers from 1 to 10 using a for loop." style="min-height: 100px;"></textarea>
-                </div>
-
-                <div class="input-group">
-                    <label>Expected Output (optional)</label>
-                    <textarea id="manual-output" placeholder="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9&#10;10" style="min-height: 80px;"></textarea>
-                </div>
-
-                <button class="btn-secondary" onclick="addManualQuestion()" style="width: 100%;">
-                    ➕ Add Question
-                </button>
-            </div>
+        <div class="controls">
+            <label for="question-select">Choose an exercise</label>
+            <select id="question-select">
+                <option value="0">1. Simple For Loop - Count to 10</option>
+                <option value="1">2. For Loop with Range - Even Numbers</option>
+                <option value="2">3. List Basics - Create and Print</option>
+                <option value="3">4. For-in Loop - Iterate Through List</option>
+                <option value="4">5. Nested For Loop - Multiplication Table</option>
+                <option value="5">6. User Input - Greet by Name</option>
+                <option value="6">7. List Sum - Add Numbers</option>
+                <option value="7">8. Pattern Printing - Stars Triangle</option>
+            </select>
         </div>
 
-        <div class="questions-container" id="questions-container">
-            <h2 style="margin-bottom: 2rem; text-align: center;">Practice <em>Exercises</em></h2>
-            <div id="questions-list"></div>
-        </div>
+        <div id="question-container"></div>
     </div>
 
     <script>
+        const questions = [
+            {
+                title: "Simple For Loop",
+                description: "Write a program that prints numbers from 1 to 10 using a for loop.",
+                example: "1\n2\n3\n...\n10",
+                hint: "Use range(1, 11) to generate numbers from 1 to 10",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n"
+                    }
+                ]
+            },
+            {
+                title: "Even Numbers",
+                description: "Write a program that prints all even numbers from 2 to 20 using a for loop.",
+                example: "2\n4\n6\n...\n20",
+                hint: "You can use range(2, 21, 2) or check if i % 2 == 0",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: "2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n"
+                    }
+                ]
+            },
+            {
+                title: "Create and Print a List",
+                description: "Create a list containing the numbers [5, 10, 15, 20, 25] and print the entire list.",
+                example: "[5, 10, 15, 20, 25]",
+                hint: "Create a list using square brackets: my_list = [5, 10, 15, 20, 25]",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: "[5, 10, 15, 20, 25]\n"
+                    }
+                ]
+            },
+            {
+                title: "Iterate Through a List",
+                description: "Create a list of your favorite fruits (at least 3) and print each fruit on a separate line using a for loop.",
+                example: "apple\nbanana\norange",
+                hint: "Use: for fruit in fruits:",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: null,
+                        customCheck: (output) => {
+                            const lines = output.trim().split('\n');
+                            return lines.length >= 3 && lines.every(line => line.length > 0);
+                        },
+                        customMessage: "Print at least 3 items, each on a new line"
+                    }
+                ]
+            },
+            {
+                title: "Multiplication Table",
+                description: "Write a program that prints a 5x5 multiplication table using nested for loops. Format: row × column = result",
+                example: "1 x 1 = 1\n1 x 2 = 2\n...\n5 x 5 = 25",
+                hint: "Use two nested loops: for i in range(1, 6): for j in range(1, 6):",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: null,
+                        customCheck: (output) => {
+                            const lines = output.trim().split('\n');
+                            return lines.length === 25 && 
+                                   lines[0].includes('1') && lines[0].includes('1') &&
+                                   lines[24].includes('5') && lines[24].includes('25');
+                        },
+                        customMessage: "Should print 25 lines (5x5 table)"
+                    }
+                ]
+            },
+            {
+                title: "User Input - Greeting",
+                description: "Write a program that asks the user for their name and age, then prints a greeting message.",
+                example: "Input: John, 15\nOutput: Hello John! You are 15 years old.",
+                hint: "Use input() to get user input. Remember to convert age to string when printing.",
+                testCases: [
+                    {
+                        input: "Alice\n14",
+                        expectedOutput: null,
+                        customCheck: (output) => {
+                            return output.includes('Alice') && output.includes('14');
+                        },
+                        customMessage: "Should include the name and age in the output"
+                    }
+                ]
+            },
+            {
+                title: "Sum of List",
+                description: "Create a list of numbers and calculate their sum using a for loop. Print the result.",
+                example: "Input list: [10, 20, 30, 40]\nOutput: The sum is: 100",
+                hint: "Initialize a variable to 0, then add each number in the loop",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: null,
+                        customCheck: (output) => {
+                            const hasNumber = /\d+/.test(output);
+                            return hasNumber && output.length > 0;
+                        },
+                        customMessage: "Should calculate and print a sum"
+                    }
+                ]
+            },
+            {
+                title: "Star Triangle Pattern",
+                description: "Print a triangle pattern of stars with 5 rows using nested loops.",
+                example: "*\n**\n***\n****\n*****",
+                hint: "Use nested loops. Outer loop for rows, inner loop for stars in each row.",
+                testCases: [
+                    {
+                        input: "",
+                        expectedOutput: "*\n**\n***\n****\n*****\n"
+                    }
+                ]
+            }
+        ];
+
         let pyodide;
-        let apiKey = '';
-        let apiProvider = 'openai';
-        let questions = [];
+        let currentQuestion = 0;
 
         async function loadPyodide() {
             try {
                 pyodide = await loadPyodide();
-                console.log('Pyodide loaded');
+                console.log('Pyodide loaded successfully');
             } catch (error) {
-                console.error('Pyodide load failed:', error);
+                console.error('Failed to load Pyodide:', error);
+                alert('Failed to load Python environment. Please refresh the page.');
             }
         }
 
-        window.addEventListener('load', loadPyodide);
+        function renderQuestion(index) {
+            const q = questions[index];
+            const container = document.getElementById('question-container');
+            
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question-header">
+                        <h3 class="question-title">${q.title}</h3>
+                        <p class="question-desc">${q.description}</p>
+                    </div>
 
-        function saveApiKey() {
-            const key = document.getElementById('api-key-input').value.trim();
-            const provider = document.getElementById('api-provider').value;
-            
-            apiKey = key;
-            apiProvider = provider;
-            
-            document.getElementById('api-modal').classList.remove('show');
-            
-            if (key && key !== 'test-key-skip') {
-                document.getElementById('api-status').className = 'status-chip chip-success';
-                document.getElementById('api-status').innerHTML = '<span>✅</span><span>API Connected</span>';
-            } else {
-                document.getElementById('api-status').className = 'status-chip chip-warning';
-                document.getElementById('api-status').innerHTML = '<span>⚠️</span><span>Manual Mode</span>';
-            }
+                    ${q.example ? `
+                        <div class="example">
+                            <div class="example-label">Expected Output:</div>
+                            ${q.example}
+                        </div>
+                    ` : ''}
+
+                    <textarea id="code-input" placeholder="Write your Python code here..."># Write your code here
+</textarea>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="runCode()">Run & Check</button>
+                        <button class="btn-secondary" onclick="clearCode()">Clear</button>
+                        <button class="btn-secondary" onclick="showHint()">Show Hint</button>
+                    </div>
+
+                    <div class="loading" id="loading">Running your code...</div>
+
+                    <div class="hint" id="hint">
+                        <div class="hint-title">💡 Hint</div>
+                        <div>${q.hint}</div>
+                    </div>
+
+                    <div class="output" id="output">
+                        <div class="output-header">
+                            <span class="output-icon" id="output-icon"></span>
+                            <span id="output-title"></span>
+                        </div>
+                        <div class="output-content" id="output-content"></div>
+                    </div>
+                </div>
+            `;
         }
 
-        const fileUpload = document.getElementById('file-upload');
-
-        fileUpload.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            fileUpload.classList.add('dragover');
-        });
-
-        fileUpload.addEventListener('dragleave', () => {
-            fileUpload.classList.remove('dragover');
-        });
-
-        fileUpload.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileUpload.classList.remove('dragover');
-            const file = e.dataTransfer.files[0];
-            if (file) {
-                handleFile(file);
-            }
-        });
-
-        function handleFileUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                handleFile(file);
-            }
-        }
-
-        function handleFile(file) {
-            const fileName = document.getElementById('file-name');
-            fileName.textContent = `📎 ${file.name}`;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const content = e.target.result;
-                document.getElementById('material-text').value = content;
-            };
-            reader.readAsText(file);
-        }
-
-        async function generateQuestions() {
-            const material = document.getElementById('material-text').value.trim();
-            
-            if (!material) {
-                alert('Please upload or paste some learning materials first');
+        async function runCode() {
+            if (!pyodide) {
+                alert('Python environment is still loading. Please wait a moment and try again.');
                 return;
             }
 
-            if (!apiKey || apiKey === 'test-key-skip') {
-                alert('AI question generation requires an API key. Please use manual question entry instead, or add your API key.');
+            const code = document.getElementById('code-input').value;
+            const output = document.getElementById('output');
+            const loading = document.getElementById('loading');
+            const outputIcon = document.getElementById('output-icon');
+            const outputTitle = document.getElementById('output-title');
+            const outputContent = document.getElementById('output-content');
+
+            if (!code.trim()) {
+                showOutput('error', '⚠️', 'No Code', 'Please write some code first!');
                 return;
             }
 
-            const loading = document.getElementById('generate-loading');
             loading.classList.add('show');
+            output.classList.remove('show');
 
             try {
-                let generatedQuestions;
-                
-                if (apiProvider === 'openai') {
-                    generatedQuestions = await generateWithOpenAI(material);
-                } else {
-                    generatedQuestions = await generateWithAnthropic(material);
+                const q = questions[currentQuestion];
+                let results = [];
+                let allPassed = true;
+
+                for (let testCase of q.testCases) {
+                    pyodide.runPython(`
+import sys
+from io import StringIO
+
+sys.stdin = StringIO(${JSON.stringify(testCase.input || '')})
+sys.stdout = StringIO()
+                    `);
+
+                    try {
+                        pyodide.runPython(code);
+                        const result = pyodide.runPython('sys.stdout.getvalue()');
+
+                        if (testCase.customCheck) {
+                            const passed = testCase.customCheck(result);
+                            results.push({
+                                passed,
+                                output: result,
+                                message: testCase.customMessage
+                            });
+                            if (!passed) allPassed = false;
+                        } else if (testCase.expectedOutput !== null) {
+                            const passed = result === testCase.expectedOutput;
+                            results.push({
+                                passed,
+                                output: result,
+                                expected: testCase.expectedOutput
+                            });
+                            if (!passed) allPassed = false;
+                        } else {
+                            results.push({
+                                passed: true,
+                                output: result
+                            });
+                        }
+                    } catch (error) {
+                        loading.classList.remove('show');
+                        showOutput('error', '❌', 'Runtime Error', error.message);
+                        return;
+                    }
                 }
 
-                generatedQuestions.forEach(q => {
-                    questions.push({
-                        title: q.title,
-                        description: q.description,
-                        expectedOutput: q.expectedOutput || '',
-                        score: 0,
-                        maxScore: 10
-                    });
-                });
-
-                renderQuestions();
                 loading.classList.remove('show');
-                
+
+                if (allPassed) {
+                    showOutput('success', '✅', 'Perfect!', 
+                        'Your code works correctly!\n\nYour output:\n' + results[0].output);
+                } else {
+                    let message = 'Your output:\n' + results[0].output;
+                    if (results[0].expected) {
+                        message += '\n\nExpected output:\n' + results[0].expected;
+                    } else if (results[0].message) {
+                        message += '\n\nRequired: ' + results[0].message;
+                    }
+                    showOutput('error', '❌', 'Not quite right', message);
+                }
+
             } catch (error) {
-                loading
+                loading.classList.remove('show');
+                showOutput('error', '❌', 'Error', error.message);
+            }
+        }
+
+        function showOutput(type, icon, title, content) {
+            const output = document.getElementById('output');
+            const outputIcon = document.getElementById('output-icon');
+            const outputTitle = document.getElementById('output-title');
+            const outputContent = document.getElementById('output-content');
+
+            output.className = 'output show ' + type;
+            outputIcon.textContent = icon;
+            outputTitle.textContent = title;
+            outputContent.textContent = content;
+        }
+
+        function clearCode() {
+            document.getElementById('code-input').value = '# Write your code here\n';
+            document.getElementById('output').classList.remove('show');
+            document.getElementById('hint').classList.remove('show');
+        }
+
+        function showHint() {
+            const hint = document.getElementById('hint');
+            hint.classList.toggle('show');
+        }
+
+        document.getElementById('question-select').addEventListener('change', (e) => {
+            currentQuestion = parseInt(e.target.value);
+            renderQuestion(currentQuestion);
+        });
+
+        window.addEventListener('load', () => {
+            loadPyodide();
+            
